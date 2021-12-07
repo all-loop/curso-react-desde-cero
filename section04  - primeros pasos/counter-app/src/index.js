@@ -3,7 +3,9 @@ import React from "react";
 // react-dom nos entrega las utilidades para tratar con el DOM del navegador
 import ReactDom from "react-dom";
 
-const saludo = <h1>Hola, Mundo!</h1>;
+import PrimeraApp from "./PrimeraApp";
+import "./index.css";
+
 const divRoot = document.querySelector("#root");
 
-ReactDom.render(saludo, divRoot);
+ReactDom.render(<PrimeraApp />, divRoot);
