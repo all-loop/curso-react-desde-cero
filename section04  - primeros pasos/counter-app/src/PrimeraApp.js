@@ -14,7 +14,16 @@
 import React from "react";
 
 // Functional components
-const PrimeraApp = () => {
+
+/**
+ * Props
+ * ......
+ *
+ * Todo componente tiene la capacidad de recibir propiedades o argumentos a través
+ * de un objeto llamado props. Es a través de este objeto que podemos comunicar un
+ * componente con otro.
+ */
+const PrimeraApp = ({ saludo = "Hola, Saludo por defecto" }) => {
   /**
    * Devolver más de una etiqueta
    * ............................
@@ -29,9 +38,10 @@ const PrimeraApp = () => {
    *  sólo incluye su contenido en el dom.
    * 3. Usando la síntaxis <>conenido</>. Al igual que fragment, sólo incluye su contenido en el dom.
    */
+
   return (
     <>
-      <h1>Hola, Mundo!</h1>
+      <h1>{saludo}</h1>
       <p>Mi primera aplicación</p>
     </>
   );
