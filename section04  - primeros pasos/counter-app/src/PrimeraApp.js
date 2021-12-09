@@ -12,6 +12,7 @@
  */
 // import React, { Fragment } from "react";
 import React from "react";
+import PropTypes from "prop-types";
 
 // Functional components
 
@@ -23,7 +24,7 @@ import React from "react";
  * de un objeto llamado props. Es a través de este objeto que podemos comunicar un
  * componente con otro.
  */
-const PrimeraApp = ({ saludo = "Hola, Saludo por defecto" }) => {
+const PrimeraApp = ({ saludo, subtitulo }) => {
   /**
    * Devolver más de una etiqueta
    * ............................
@@ -42,9 +43,23 @@ const PrimeraApp = ({ saludo = "Hola, Saludo por defecto" }) => {
   return (
     <>
       <h1>{saludo}</h1>
-      <p>Mi primera aplicación</p>
+      <p>{subtitulo}</p>
     </>
   );
+};
+
+// La propiedad propTypes de un componente hace referencia al lugar dónde se
+// validan los valores recibidos por un componente. La validación abarca cosas
+// como: el tipo de dato, es necesario, entre otras cosas. En caso de no pasar
+// alguna validación, React nos señala el problema con un Warning en consola.
+PrimeraApp.propTypes = {
+  saludo: PropTypes.string.isRequired,
+};
+
+// La proopiedad defaultProps de un componente nos permite establecer los
+// valores por defecto que de cada propiedad recibida por el componente.
+PrimeraApp.defaultProps = {
+  subtitulo: "Subtítulo por defecto",
 };
 
 export default PrimeraApp;
